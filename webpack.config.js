@@ -4,11 +4,11 @@ const webpack = require("webpack");
 module.exports = {
     entry: [
         "webpack-dev-server/client?http://localhost:5000",
+        'webpack/hot/only-dev-server',
         "./src/App.tsx"
     ],
     output: {
         filename: "bundle.js",
-        path: resolve(__dirname, "dist"),
         publicPath: "/"
     },
     devtool: "source-map",

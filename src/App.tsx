@@ -28,7 +28,7 @@ const BasicExample = () => (
 
 const Home = () => (
     <div>
-        <h2>首页</h2>
+        <h2>首页123</h2>
     </div>
 );
 
@@ -61,7 +61,7 @@ const Topics = ({ match }: RouteComponentProps<any>) => (
 
         <Route path={`${match.url}/:topicId`} component={Topic} />
         <Route exact path={match.url} render={() => (
-            <h3>请选择一个主题</h3>
+            <h3>请选择一个主题123</h3>
         )} />
     </div>
 );
