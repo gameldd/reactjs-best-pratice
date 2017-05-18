@@ -1,14 +1,12 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
-
 import {
     BrowserRouter as Router,
     Route,
     Link
 } from "react-router-dom";
-import { RouteComponentProps } from "@types/react-router";
+import { RouteComponentProps } from "react-router";
 
-const BasicExample = () => (
+export const App = () => (
     <Router>
         <div>
             <ul>
@@ -26,19 +24,19 @@ const BasicExample = () => (
     </Router>
 );
 
-const Home = () => (
+export const Home = () => (
     <div>
-        <h2>首页123</h2>
+        <h2>首页</h2>
     </div>
 );
 
-const About = () => (
+export const About = () => (
     <div>
         <h2>关于</h2>
     </div>
 );
 
-const Topics = ({ match }: RouteComponentProps<any>) => (
+export const Topics = ({ match }: RouteComponentProps<any>) => (
     <div>
         <h2>主题列表</h2>
         <ul>
@@ -61,15 +59,13 @@ const Topics = ({ match }: RouteComponentProps<any>) => (
 
         <Route path={`${match.url}/:topicId`} component={Topic} />
         <Route exact path={match.url} render={() => (
-            <h3>请选择一个主题123</h3>
+            <h3>请选择一个主题</h3>
         )} />
     </div>
 );
 
-const Topic = ({ match }: RouteComponentProps<any>) => (
+export const Topic = ({ match }: RouteComponentProps<any>) => (
     <div>
         <h3>{match.params.topicId}</h3>
     </div>
 );
-
-ReactDOM.render(<BasicExample />, document.getElementById("app"));
